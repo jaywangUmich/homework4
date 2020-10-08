@@ -36,7 +36,7 @@ nav a{
 /*Your Code Here*/
 /*Write selector/rule property to add an underline when
 links in the navigation are in the hover or focus state.*/
-nav a:hover{
+nav a:hover, nav a:focus{
   text-decoration: underline; 
 }
 
@@ -49,11 +49,17 @@ nav a:hover{
   z-index: 1;
 
   /*Your code here*/
-  text-decoration: none
+  position: fixed;
+  top:  40px;
+  display: none;
 }
+
 
 /*Your Code Here*/
 /*Write selector/rule property to position the skip class element*/
+.skip a:focus, .skip a:hover{
+  display: block;
+}
 
 /*Your Code Here*/
 /*Write selector/rule property to style all elements when in focus*/
@@ -82,7 +88,7 @@ footer{
 .container{
   /*Your Code Here*/
   display: grid;
-  grid-gap: 15px;
+  grid-row-gap: 15px;
   grid-template-columns: 1fr 5fr 1fr;
   grid-template-rows: auto auto auto auto auto;
   /*margin: auto;*/
@@ -120,14 +126,13 @@ header p{
 
 .about, .method, .clients, .contact{
   /*Your Code Here*/
-  grid-column: 2 / auto;  /*Can you explain what this does?*/
-  margin: auto;
+  grid-column: 2 / auto;
 }
 
 .about-image, .method-image, .clients-image, .contact-image{
   /*Your Code Here*/
   max-height: 700px;
-  grid-column: 1 / -1;  /*Can you explain what this does?*/
+  grid-column: 1 / -1;
   overflow: hidden;
 }
 
@@ -161,7 +166,7 @@ background-color: rgba(255, 255, 255, .8);
   border: 10px solid black;
   padding: 30px;
   /*Your code here:*/
-
+  align-self: center;
 }
 
 
@@ -169,18 +174,23 @@ background-color: rgba(255, 255, 255, .8);
   nav{
     padding: 30px 0px;
     /*Your code here:*/
+    text-align: right;
   }
 
   .container{
     /*Your code here:*/
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: 400px 400px 400px 400px 400px;
   }
 
   .about, .clients, .method-image, .contact-image{
     /*Your code here:*/
+    grid-column: 3 / 5;
   }
 
   .about-image, .clients-image, .method, .contact{
     /*Your code here:*/
+    grid-column: 2 / 4;
   }
 }
 
